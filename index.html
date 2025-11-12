@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Map Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <h1 class="app-title">Interactive Map Dashboard</h1>
+      <p class="app-subtitle">Filters · Map · Inspector</p>
+    </div>
+  </header>
+
+  <!-- Main 3-column shell -->
+  <div class="app-shell">
+    <!-- Left: Filters -->
+    <aside class="panel panel-left" id="filters">
+      <h2 class="panel-title">Filters</h2>
+
+      <div class="layer-item">
+        <label class="layer-row">
+          <input type="checkbox" id="layer1" checked />
+          <span>Show Layer 1 (Counties)</span>
+        </label>
+      </div>
+
+      <div class="layer-item">
+        <label class="layer-row">
+          <input type="checkbox" id="layer2" checked />
+          <span>Show Layer 2 (Data)</span>
+        </label>
+      </div>
+
+      <div class="tips">
+        <p>Tip: Click a feature on the map to see attributes on the right.</p>
+      </div>
+    </aside>
+
+    <!-- Middle: Map -->
+    <main class="map-wrap">
+      <div id="map" class="map"></div>
+    </main>
+
+    <!-- Right: Inspector -->
+    <aside class="panel panel-right" id="inspector">
+      <h2 class="panel-title">Inspector</h2>
+      <div class="coords" id="coords">
+        <strong>Lon, Lat:</strong> <span id="lonlat">—</span>
+      </div>
+      <div class="feature-info" id="feature-info">
+        <div class="empty-state">Click a map feature to view its attributes.</div>
+      </div>
+      <div class="inspector-actions">
+        <button id="clearSelection" class="btn">Clear Selection</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
